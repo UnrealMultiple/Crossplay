@@ -38,7 +38,7 @@ namespace Crossplay
 
         public override string Description => "Enables crossplay for terraria";
 
-        public override Version Version => new("2.2");
+        public override Version Version => new("2.3");
 
         public CrossplayConfig Config { get; } = new();
 
@@ -173,11 +173,6 @@ namespace Crossplay
                             }
                             if (!int.TryParse(clientVersion.AsSpan(clientVersion.Length - 3), out int versionNumber))
                             {
-                                return;
-                            }
-                            if (versionNumber == Main.curRelease)
-                            {
-                                ClientVersions[index] = -1;
                                 return;
                             }
                             if (!_supportedVersions.ContainsKey(versionNumber))
