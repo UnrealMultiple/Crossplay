@@ -175,6 +175,11 @@ namespace Crossplay
                             {
                                 return;
                             }
+                            if (versionNumber == Main.curRelease)
+                            {
+                                ClientVersions[index] = versionNumber;
+                                return;
+                            }
                             if (!_supportedVersions.ContainsKey(versionNumber))
                             {
                                 return;
